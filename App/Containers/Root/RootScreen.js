@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import NavigationService from 'App/Services/NavigationService'
-import AppNavigator from 'App/Navigators/AppNavigator'
+import RootNavigator from 'App/Navigators/RootNavigator'
 import { View } from 'react-native'
 import { connect } from 'react-redux'
 import StartupActions from 'App/Stores/Startup/Actions'
@@ -14,9 +14,9 @@ class RootScreen extends Component {
   }
 
   render() {
-    return (
+      return (
       <View style={Helpers.fill}>
-        <AppNavigator
+        <RootNavigator
           // Initialize the NavigationService (see https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html)
           ref={(navigatorRef) => {
             NavigationService.setTopLevelNavigator(navigatorRef)
@@ -29,13 +29,13 @@ class RootScreen extends Component {
 
 RootScreen.propTypes = {
   startup: PropTypes.func,
-}
+};
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
   startup: () => dispatch(StartupActions.startup()),
-})
+});
 
 export default connect(
   mapStateToProps,
