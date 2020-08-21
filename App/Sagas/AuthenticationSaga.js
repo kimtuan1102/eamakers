@@ -1,7 +1,7 @@
 import { put, call } from 'redux-saga/effects'
 import AuthenticationAction from 'App/Stores/Authentication/Actions'
 import { authService } from 'App/Services/AuthService'
-
+import NavigationService from 'App/Services/NavigationService'
 /**
  * A saga can contain multiple functions.
  *
@@ -10,9 +10,10 @@ import { authService } from 'App/Services/AuthService'
  */
 export function* login(user, password) {
   yield put(AuthenticationAction.loginLoading())
-  const response = yield call(authService.login(user,password))
+  const response = yield call(authService.login, user, password)
   if(response) {
     yield put(AuthenticationAction.loginSuccess(response))
+    //NavigationService.navigate("MainScreen",null)
   }
   else {
     yield put(AuthenticationAction.loginFailed("User or password incorrect"))

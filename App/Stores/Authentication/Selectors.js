@@ -1,1 +1,1 @@
-export const token = (state) => state.auth.token
+export const getToken = (state) => state.auth.token

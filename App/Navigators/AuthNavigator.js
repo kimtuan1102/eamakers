@@ -1,8 +1,12 @@
 import {createStackNavigator} from "react-navigation";
-import HomeScreen from "App/Containers/HomeScreen/HomeScreen";
+import LoginScreen from 'App/Containers/LoginScreen/LoginScreen'
 
-const AuthNavigator = createStackNavigator({
-    Home: HomeScreen
-});
-
+const AuthNavigator = createStackNavigator(
+  {
+      LoginScreen: LoginScreen,
+  },
+  {
+    headerMode: 'none'
+  }
+)
 export default AuthNavigator
