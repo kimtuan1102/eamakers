@@ -1,4 +1,4 @@
-import {createStackNavigator} from "react-navigation";
+import { createAppContainer, createStackNavigator } from 'react-navigation'
 import LoginScreen from 'App/Containers/LoginScreen/LoginScreen'
 
 const AuthNavigator = createStackNavigator(
@@ -9,4 +9,4 @@ const AuthNavigator = createStackNavigator(
     headerMode: 'none'
   }
 )
-export default AuthNavigator
+export default createAppContainer(AuthNavigator)

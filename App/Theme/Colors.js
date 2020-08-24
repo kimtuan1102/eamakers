@@ -7,10 +7,11 @@
 
 export default {
   transparent: 'rgba(0,0,0,0)',
-  // Example colors:
   white: '#ffffff',
   text: '#212529',
   primary: '#007bff',
+  secondary: '#86939e',
   success: '#28a745',
   error: '#dc3545',
+  mayaBlue: '#ACD4FF'
 }

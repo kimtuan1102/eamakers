@@ -19,4 +19,4 @@ const AppNavigator = createStackNavigator(
   }
 )
 
-export default AppNavigator
+export default createAppContainer(AppNavigator)

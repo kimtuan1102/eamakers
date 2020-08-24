@@ -1,10 +1,11 @@
 import React from 'react'
-import { TextInput, Button, View, Text, Image } from 'react-native'
-import { Helpers, Images, Metrics } from 'App/Theme'
+import { View, Text, Image } from 'react-native'
+import { Helpers, Images, Metrics, Colors } from 'App/Theme'
+import Style from './LoginScreenStyle'
 import AuthenticationActions from 'App/Stores/Authentication/Actions'
 import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
-
+import { Input, Button } from 'react-native-elements';
 
 class LoginScreen extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class LoginScreen extends React.Component {
     render() {
       return (
         <View
-          style={[Helpers.fill, Helpers.column, Metrics.verticalPadding, Metrics.horizontalPadding]}
+          style={[Helpers.fill, Helpers.column, Metrics.verticalPadding, Metrics.horizontalPadding, Style.container]}
         >
           <View style={Helpers.fill}>
             <Image style={Helpers.fullSize} source={Images.logo} resizeMode={'contain'} />
@@ -32,24 +33,30 @@ class LoginScreen extends React.Component {
             {this.props.loginError && <Text>{this.props.loginError}</Text>}
             {this.props.token && <Text>{this.props.token}</Text>}
             <View>
-              <TextInput
-                textContentType={'emailAddress'}
+              <Input
+                label="Tài khoản"
                 value={this.state.user}
+                placeholder="Tài khoản"
+                leftIcon={{ type: 'material-community', name: 'account-circle', color: Colors.secondary}}
                 onChangeText={(text) => this.handleChange('user', text)}
-                style={[Metrics.verticalPadding, Metrics.verticalMargin, { borderWidth: 1 }]}
               />
-              <TextInput
-                secureTextEntry
-                style={{ borderWidth: 1 }}
+              <Input
+                label="Mật khẩu"
                 value={this.state.password}
+                placeholder="Mật khẩu"
+                leftIcon={{ type: 'material-community', name: 'lock', color: Colors.secondary}}
                 onChangeText={(text) => this.handleChange('password', text)}
-                style={[Metrics.verticalPadding, Metrics.verticalMargin, { borderWidth: 1 }]}
+                secureTextEntry={true}
+              />
+              <Button
+                title="Đăng nhập"
+                titleStyle={{textTransform: 'capitalize'}}
+                onPress={() => this.props.login(this.state.user, this.state.password)}
+                loading={this.props.loginLoading}
+                disabled={this.props.loginLoading}
+                disabledStyle={{backgroundColor: Colors.mayaBlue}}
               />
             </View>
-            <Button
-              title={'Sign In'}
-              onPress={() => this.props.login(this.state.user, this.state.password)}
-            />
           </View>
         </View>
       )

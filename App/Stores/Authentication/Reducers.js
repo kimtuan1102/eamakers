@@ -42,5 +42,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [AuthenticationTypes.LOGIN_LOADING]: loginLoading,
   [AuthenticationTypes.LOGIN_SUCCESS]: loginSuccess,
   [AuthenticationTypes.LOGIN_FAILED]: loginFailure,
-  [AuthenticationTypes.LOGOUT]: logout
+  [AuthenticationTypes.LOGOUT]: logout,
 })

@@ -8,12 +8,11 @@ import NavigationService from 'App/Services/NavigationService'
  * This example saga contains only one to fetch fake user informations.
  * Feel free to remove it.
  */
-export function* login(user, password) {
+export function* login({user, password}) {
   yield put(AuthenticationAction.loginLoading())
   const response = yield call(authService.login, user, password)
   if(response) {
     yield put(AuthenticationAction.loginSuccess(response))
-    //NavigationService.navigate("MainScreen",null)
   }
   else {
     yield put(AuthenticationAction.loginFailed("User or password incorrect"))

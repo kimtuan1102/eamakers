@@ -1,7 +1,7 @@
 import $http from "App/Common/Axios";
 
 function login(user, password) {
-    return $http.post('token', {
+    return $http.post('token/', {
         username: user,
         password: password
     }).then((response)=>{

@@ -1,19 +1,23 @@
-import axios from 'axios';
-import {Config} from "App/Config";
-import store from "App/Stores";
+import axios from 'axios'
+import { Config } from 'App/Config'
+import store from 'App/Stores'
+
 const $http = axios.create({
-   baseURL: Config.API_URL
-});
+  baseURL: Config.API_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
 $http.interceptors.request.use(
-    config => {
-        const state = store.getState();
-        if (state.token) {
-            config.headers = {
-                Authorization: `Bearer ${state.token}`
-            }
-        }
-        return config
-    },
-    err => Promise.reject(err)
-);
+  config => {
+    //
+    // if (token) {
+    //     config.headers = {
+    //         Authorization: `Bearer ${token}`
+    //     }
+    // }
+    return config
+  },
+  err => Promise.reject(err),
+)
 export default $http
