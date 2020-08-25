@@ -1,4 +1,4 @@
-const drawerData = [
+const drawerNavigatorData = [
   {
     name: 'Home',
     icon: 'home',
@@ -20,4 +20,4 @@ const drawerData = [
     icon: 'home',
   },
 ]
-export default drawerData
+export default drawerNavigatorData

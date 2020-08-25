@@ -1,4 +1,4 @@
-import drawerData from 'App/Route/DrawerData'
+import drawerNavigatorData from 'App/Route/DrawerNavigatorData'
 import { DrawerItem, DrawerContentScrollView } from '@react-navigation/drawer'
 import Style from 'App/Components/CustomDrawerContent/CustomDrawerContentStyle'
 import { Icon, Text, Image } from 'react-native-elements'
@@ -19,7 +19,7 @@ class CustomDrawerContent extends React.Component {
           </View>
         </View>
         <View style={Style.divider} />
-        {drawerData.map((item, idx) => (
+        {drawerNavigatorData.map((item, idx) => (
           <DrawerItem
             key={`drawer_item-${idx + 1}`}
             label={() => (

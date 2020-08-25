@@ -1,11 +1,11 @@
-import {Colors, Fonts} from 'App/Theme'
+import { Colors } from 'App/Theme'
 import headerLeftMenu from 'App/Components/HeaderLeftMenu'
-import HomeScreen from 'App/Containers/HomeScreen/HomeScreen'
 import ExampleScreen from 'App/Containers/Example/ExampleScreen'
+import TabNavigator from '../Navigators/TabNavigator'
 const StackNavigationData = [
   {
     name: 'Charts',
-    component: HomeScreen,
+    component: TabNavigator,
     headerLeft: headerLeftMenu,
     headerTitleStyle: {
       color: Colors.white,
@@ -32,4 +32,4 @@ const StackNavigationData = [
   },
 ]
 
-export default StackNavigationData;
+export default StackNavigationData

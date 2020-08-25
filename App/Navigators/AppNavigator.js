@@ -1,10 +1,10 @@
 import { createDrawerNavigator, createAppContainer } from 'react-navigation'
 import CustomDrawerContent from 'App/Components/CustomDrawerContent/CustomDrawerContent'
-import NavigatorView from '../Navigators/RootNavigator'
+import RootNavigator from '../Navigators/RootNavigator'
 import { Colors } from 'App/Theme'
 const Drawer = createDrawerNavigator(
   {
-    RootStack: NavigatorView,
+    RootStack: RootNavigator,
   },
   {
     contentComponent: CustomDrawerContent,
