@@ -7,7 +7,6 @@ import { Colors } from 'App/Theme'
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import { connect } from 'react-redux'
-import AuthenticationActions from 'App/Stores/Authentication/Actions'
 class CustomDrawerContent extends React.Component {
   render() {
     return (
@@ -15,8 +14,8 @@ class CustomDrawerContent extends React.Component {
         <View style={Style.avatarContainer}>
           <Image style={Style.avatar} source={require('../../Assets/Images/Drawer/user.png')} />
           <View style={{ paddingLeft: 15 }}>
-            <Text style={Style.userName}>{this.props.user.fullname}</Text>
-            <Text style={{ color: '#4BC1FD' }}>{this.props.user.username}</Text>
+            <Text style={Style.userName}>{this.props.user.username}</Text>
+            <Text style={{ color: Colors.mayaBlue }}>{this.props.user.fullname}</Text>
           </View>
         </View>
         <View style={Style.divider} />

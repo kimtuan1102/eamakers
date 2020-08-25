@@ -1,16 +1,15 @@
-import { Image, TouchableOpacity } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 import React from 'react'
-import { Icon, Text } from 'react-native-elements'
-
-const headerLeftMenu = (props) => {
+import { Icon } from 'react-native-elements'
+const headerLeftMenu = (navigation) => {
   return (
     <TouchableOpacity
-      onPress={() => props.navigation.toggleDrawer()}
+      onPress={() => navigation.toggleDrawer()}
       style={{
         paddingLeft: 10,
       }}
     >
-      <Icon name="menu" type="material-community" />
+      <Icon name="menu" type="material-community"/>
     </TouchableOpacity>
   )
 }

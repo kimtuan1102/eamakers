@@ -8,7 +8,6 @@ const StackNavigationData = [
     component: HomeScreen,
     headerLeft: headerLeftMenu,
     headerTitleStyle: {
-      fontFamily: Fonts.normal,
       color: Colors.white,
       fontSize: 18,
     },
@@ -18,7 +17,6 @@ const StackNavigationData = [
     component: ExampleScreen,
     headerLeft: headerLeftMenu,
     headerTitleStyle: {
-      fontFamily: Fonts.normal,
       color: Colors.white,
       fontSize: 18,
     },
@@ -28,7 +26,6 @@ const StackNavigationData = [
     component: ExampleScreen,
     headerLeft: headerLeftMenu,
     headerTitleStyle: {
-      fontFamily: Fonts.normal,
       color: Colors.white,
       fontSize: 18,
     },
