@@ -7,18 +7,14 @@ import AuthNavigator from 'App/Navigators/AuthNavigator'
 
 class RootScreen extends Component {
   render() {
-      return (
-      <View style={Helpers.fill}>
-        {this.props.token ? <AppNavigator/> : <AuthNavigator/>}
-      </View>
+    return (
+      <View style={Helpers.fill}>{this.props.token ? <AppNavigator /> : <AuthNavigator />}</View>
     )
   }
 }
 
 const mapStateToProps = (state) => ({
   token: state.auth.token,
-});
+})
 
-export default connect(
-  mapStateToProps,
-)(RootScreen)
+export default connect(mapStateToProps)(RootScreen)

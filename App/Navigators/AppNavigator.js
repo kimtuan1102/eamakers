@@ -1,22 +1,18 @@
-import { createAppContainer, createStackNavigator } from 'react-navigation'
+import { createDrawerNavigator, createAppContainer } from 'react-navigation'
+import HomeScreen from 'App/Containers/HomeScreen/HomeScreen'
+import CustomDrawerContent from 'App/Components/CustomDrawerContent/CustomDrawerContent'
+import { Colors } from 'App/Theme'
+import React from 'react'
 
-import ExampleScreen from 'App/Containers/Example/ExampleScreen'
-import SplashScreen from 'App/Containers/SplashScreen/SplashScreen'
-
-/**
- * The root screen contains the application's navigation.
- *
- * @see https://reactnavigation.org/docs/en/hello-react-navigation.html#creating-a-stack-navigator
- */
-const AppNavigator = createStackNavigator(
+const Drawer = createDrawerNavigator(
   {
-    // Create the application routes here (the key is the route name, the value is the target screen)
-    // See https://reactnavigation.org/docs/en/stack-navigator.html#routeconfigs
-    SplashScreen: SplashScreen,
-    // The main application screen is our "ExampleScreen". Feel free to replace it with your
-    // own screen and remove the example.
-    MainScreen: ExampleScreen,
+    RootStack: HomeScreen,
+  },
+  {
+    contentComponent: CustomDrawerContent,
+    style: {
+      backgroundColor: Colors.primary,
+    },
   }
 )
-
-export default createAppContainer(AppNavigator)
+export default createAppContainer(Drawer)
