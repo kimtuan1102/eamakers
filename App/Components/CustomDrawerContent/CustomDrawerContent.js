@@ -7,6 +7,7 @@ import { Colors } from 'App/Theme'
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import { connect } from 'react-redux'
+import AuthenticationActions from '../../Stores/Authentication/Actions'
 class CustomDrawerContent extends React.Component {
   render() {
     return (
@@ -33,15 +34,28 @@ class CustomDrawerContent extends React.Component {
           />
         ))}
         <View style={Style.divider} />
+        <DrawerItem
+          label={() => (
+            <View style={Style.menuLabelFlex}>
+              <Icon name="logout-variant" type="material-community" color={Colors.white} />
+              <Text style={Style.menuTitle}>Đăng xuất</Text>
+            </View>
+          )}
+          onPress={() => this.props.logout()}
+        />
       </DrawerContentScrollView>
     )
   }
 }
 CustomDrawerContent.propTypes = {
   user: PropTypes.object,
+  logout: PropTypes.func,
 }
 const mapStateToProps = (state) => ({
   user: state.auth.user,
 })
+const mapDispatchToProps = (dispatch) => ({
+  logout: () => dispatch(AuthenticationActions.logout()),
+})
 
-export default connect(mapStateToProps, null)(CustomDrawerContent)
+export default connect(mapStateToProps, mapDispatchToProps)(CustomDrawerContent)

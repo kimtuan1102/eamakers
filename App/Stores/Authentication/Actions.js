@@ -23,7 +23,7 @@ const { Types, Creators } = createActions({
   loginLoading: null,
   loginSuccess: ['token'],
   loginFailed: ['error'],
-  logout: null
+  logout: null,
 })
 
 export const AuthenticationTypes = Types

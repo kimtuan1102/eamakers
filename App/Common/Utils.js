@@ -1,8 +1,6 @@
 import headerLeftMenu from 'App/Components/HeaderLeftMenu'
 import { Icon } from 'react-native-elements'
-import { Colors } from '../Theme'
 import React from 'react'
-
 export const convertToRouteConfigMapStack = (array) => {
   const initialValue = {}
   return array.reduce((obj, item) => {

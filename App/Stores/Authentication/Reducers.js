@@ -7,11 +7,11 @@
 import { INITIAL_STATE } from './InitialState'
 import { createReducer } from 'reduxsauce'
 import { AuthenticationTypes } from './Actions'
-const jwtDecode = require('jwt-decode');
+const jwtDecode = require('jwt-decode')
 export const loginLoading = (state) => ({
   ...state,
   loginLoading: true,
-  loginError: null
+  loginError: null,
 })
 
 export const loginSuccess = (state, { token }) => ({
@@ -28,12 +28,12 @@ export const loginFailure = (state, { error }) => ({
   loginLoading: false,
   loginError: error,
 })
-export const logout = (state) =>({
+export const logout = (state) => ({
   ...state,
   token: null,
   user: {},
   loginLoading: false,
-  loginError: null
+  loginError: null,
 })
 /**
  * @see https://github.com/infinitered/reduxsauce#createreducer
