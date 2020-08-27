@@ -16,9 +16,7 @@ class RootNavigator extends React.Component {
               component={item.component}
               options={{
                 headerLeft: () => (
-                  <item.headerLeft
-                    onPress={() => this.props.navigation.toggleDrawer()}
-                  ></item.headerLeft>
+                  <item.headerLeft onPress={() => this.props.navigation.toggleDrawer()} />
                 ),
                 headerStyle: { backgroundColor: Colors.primary },
                 headerTitleStyle: item.headerTitleStyle,
