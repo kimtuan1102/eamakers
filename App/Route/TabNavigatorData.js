@@ -1,18 +1,21 @@
 import HomeScreen from '../Containers/HomeScreen/HomeScreen'
+import QuanTriScreen from 'App/Containers/Superuser/QuanTriScreen/QuanTriScreen'
+import ThongKeScreen from 'App/Containers/Superuser/ThongKeScreen/ThongKeScreen'
+import RutTienScreen from 'App/Containers/Superuser/RutTienScreen/RutTienScreen'
 export const TabNavigationDataSupperAdmin = [
   {
     name: 'Quản Trị',
-    component: HomeScreen,
+    component: QuanTriScreen,
     icon: 'cog-outline',
   },
   {
-    name: 'Thông Kê',
-    component: HomeScreen,
+    name: 'Thống Kê',
+    component: ThongKeScreen,
     icon: 'chart-line-variant',
   },
   {
     name: 'Rút Tiền',
-    component: HomeScreen,
+    component: RutTienScreen,
     icon: 'currency-usd',
   },
 ]

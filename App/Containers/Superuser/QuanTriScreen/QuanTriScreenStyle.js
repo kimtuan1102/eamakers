@@ -3,7 +3,9 @@ import { Colors } from 'App/Theme'
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.secondary,
+    flex: 1,
+    justifyContent: 'center',
   },
   logo: {
     backgroundColor: Colors.white,

@@ -5,5 +5,5 @@ export const INITIAL_STATE = {
   user: {},
   token: null,
   loginLoading: false,
-  loginError: null
+  loginError: null,
 }

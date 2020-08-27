@@ -32,21 +32,19 @@ class TabNavigator extends React.Component {
         break
     }
     return (
-      <NavigationContainer>
-        <Tab.Navigator>
-          {tabNavigatorData.map((item, idx) => (
-            <Tab.Screen
-              key={`tab_item${idx + 1}`}
-              name={item.name}
-              component={item.component}
-              options={{
-                tabBarLabel: item.name,
-                tabBarIcon: () => <Icon name={item.icon} type="material-community" />,
-              }}
-            />
-          ))}
-        </Tab.Navigator>
-      </NavigationContainer>
+      <Tab.Navigator>
+        {tabNavigatorData.map((item, idx) => (
+          <Tab.Screen
+            key={`tab_item${idx + 1}`}
+            name={item.name}
+            component={item.component}
+            options={{
+              tabBarLabel: item.name,
+              tabBarIcon: () => <Icon name={item.icon} type="material-community" />,
+            }}
+          />
+        ))}
+      </Tab.Navigator>
     )
   }
 }
