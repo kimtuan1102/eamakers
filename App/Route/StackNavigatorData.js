@@ -1,5 +1,5 @@
 import { Colors } from 'App/Theme'
-import headerLeftMenu from 'App/Components/HeaderLeftMenu'
+import HeaderLeftMenu from 'App/Components/HeaderLeftMenu'
 import headerLeftMenuWithSearch from 'App/Components/HeaderLeftWithSearch'
 import ExampleScreen from 'App/Containers/Example/ExampleScreen'
 import TabNavigator from '../Navigators/TabNavigator'
@@ -7,6 +7,7 @@ const StackNavigationData = [
   {
     name: 'Tab Navigator',
     component: TabNavigator,
+    headerLeft: HeaderLeftMenu,
     headerTitleStyle: {
       color: Colors.white,
       fontSize: 18,
@@ -15,7 +16,7 @@ const StackNavigationData = [
   {
     name: 'Gallery',
     component: ExampleScreen,
-    headerLeft: headerLeftMenu,
+    headerLeft: HeaderLeftMenu,
     headerTitleStyle: {
       color: Colors.white,
       fontSize: 18,
@@ -24,7 +25,7 @@ const StackNavigationData = [
   {
     name: 'Profile',
     component: ExampleScreen,
-    headerLeft: headerLeftMenu,
+    headerLeft: HeaderLeftMenu,
     headerTitleStyle: {
       color: Colors.white,
       fontSize: 18,

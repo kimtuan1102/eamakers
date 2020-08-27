@@ -15,10 +15,13 @@ class RootNavigator extends React.Component {
               name={item.name}
               component={item.component}
               options={{
-                headerLeft: item.headerLeft,
+                headerLeft: () => (
+                  <item.headerLeft
+                    onPress={() => this.props.navigation.toggleDrawer()}
+                  ></item.headerLeft>
+                ),
                 headerStyle: { backgroundColor: Colors.primary },
                 headerTitleStyle: item.headerTitleStyle,
-                headerShown: !!item.headerLeft,
               }}
             />
           ))}
