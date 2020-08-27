@@ -10,8 +10,9 @@ export default {
   white: '#ffffff',
   text: '#212529',
   primary: '#262c49',
-  secondary: '#86939e',
+  secondary: '#eff2f7',
   success: '#28a745',
   error: '#dc3545',
+  icon: '#86939e',
   mayaBlue: '#ACD4FF',
 }

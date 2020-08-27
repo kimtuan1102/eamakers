@@ -1,29 +1,19 @@
 import HomeScreen from '../Containers/HomeScreen/HomeScreen'
 export const TabNavigationDataSupperAdmin = [
   {
-    name: 'Home',
+    name: 'Quản Trị',
     component: HomeScreen,
-    icon: 'home',
+    icon: 'cog-outline',
   },
   {
-    name: 'Calendar',
+    name: 'Thông Kê',
     component: HomeScreen,
-    icon: 'home',
+    icon: 'chart-line-variant',
   },
   {
-    name: 'Grids',
+    name: 'Rút Tiền',
     component: HomeScreen,
-    icon: 'home',
-  },
-  {
-    name: 'Pages',
-    component: HomeScreen,
-    icon: 'home',
-  },
-  {
-    name: 'Components',
-    component: HomeScreen,
-    icon: 'home',
+    icon: 'currency-usd',
   },
 ]
 
@@ -35,11 +25,6 @@ export const TabNavigationDataAdmin = [
   },
   {
     name: 'Calendar',
-    component: HomeScreen,
-    icon: 'home',
-  },
-  {
-    name: 'Grids',
     component: HomeScreen,
     icon: 'home',
   },
@@ -67,16 +52,6 @@ export const TabNavigationDataLead = [
   },
   {
     name: 'Grids',
-    component: HomeScreen,
-    icon: 'home',
-  },
-  {
-    name: 'Pages',
-    component: HomeScreen,
-    icon: 'home',
-  },
-  {
-    name: 'Components',
     component: HomeScreen,
     icon: 'home',
   },

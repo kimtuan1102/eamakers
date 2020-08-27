@@ -1,6 +1,8 @@
 import { TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Icon } from 'react-native-elements'
+import { Colors } from 'App/Theme'
+
 const headerLeftMenu = (navigation) => {
   return (
     <TouchableOpacity
@@ -9,7 +11,7 @@ const headerLeftMenu = (navigation) => {
         paddingLeft: 10,
       }}
     >
-      <Icon name="menu" type="material-community"/>
+      <Icon name="menu" type="material-community" color={Colors.white} />
     </TouchableOpacity>
   )
 }

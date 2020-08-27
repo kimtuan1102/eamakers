@@ -44,7 +44,7 @@ class LoginScreen extends React.Component {
               leftIcon={{
                 type: 'material-community',
                 name: 'account-circle',
-                color: Colors.secondary,
+                color: Colors.icon,
               }}
               onChangeText={(text) => this.handleChange('user', text)}
             />
@@ -52,7 +52,7 @@ class LoginScreen extends React.Component {
               label="Mật khẩu"
               value={this.state.password}
               placeholder="Mật khẩu"
-              leftIcon={{ type: 'material-community', name: 'lock', color: Colors.secondary }}
+              leftIcon={{ type: 'material-community', name: 'lock', color: Colors.icon }}
               onChangeText={(text) => this.handleChange('password', text)}
               secureTextEntry={true}
               errorMessage={this.props.loginError}
