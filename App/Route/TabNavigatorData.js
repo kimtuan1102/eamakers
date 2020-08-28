@@ -2,6 +2,12 @@ import HomeScreen from '../Containers/HomeScreen/HomeScreen'
 import QuanTriScreen from 'App/Containers/Superuser/QuanTriScreen/QuanTriScreen'
 import ThongKeScreen from 'App/Containers/Superuser/ThongKeScreen/ThongKeScreen'
 import RutTienScreen from 'App/Containers/Superuser/RutTienScreen/RutTienScreen'
+import AccountScreen from 'App/Containers/Superuser/AccountScreen/AccountScreen'
+import AccountAdminScreen from 'App/Containers/Admin/AccountScreen/AccountAdminScreen'
+import ThongKeAdminScreen from 'App/Containers/Admin/ThongKeScreen/ThongKeAdminScreen'
+import QuanTriAdminScreen from 'App/Containers/Admin/QuanTriScreen/QuanTriAdminScreen'
+import ThongKeAdminMT4Screen from 'App/Containers/Admin/ThongKeAdminMT4/ThongKeAdminMT4Screen'
+
 export const TabNavigationDataSupperAdmin = [
   {
     name: 'Quản Trị',
@@ -18,28 +24,33 @@ export const TabNavigationDataSupperAdmin = [
     component: RutTienScreen,
     icon: 'currency-usd',
   },
+  {
+    name: 'Tài khoản',
+    component: AccountScreen,
+    icon: 'account',
+  },
 ]
 
 export const TabNavigationDataAdmin = [
   {
-    name: 'Home',
-    component: HomeScreen,
-    icon: 'home',
+    name: 'MT4',
+    component: ThongKeAdminMT4Screen,
+    icon: 'bitcoin',
   },
   {
-    name: 'Calendar',
-    component: HomeScreen,
-    icon: 'home',
+    name: 'Giao dịch',
+    component: ThongKeAdminScreen,
+    icon: 'chart-line-variant',
   },
   {
-    name: 'Pages',
-    component: HomeScreen,
-    icon: 'home',
+    name: 'Quản trị',
+    component: QuanTriAdminScreen,
+    icon: 'cog-outline',
   },
   {
-    name: 'Components',
-    component: HomeScreen,
-    icon: 'home',
+    name: 'Tài khoản',
+    component: AccountAdminScreen,
+    icon: 'account',
   },
 ]
 export const TabNavigationDataLead = [

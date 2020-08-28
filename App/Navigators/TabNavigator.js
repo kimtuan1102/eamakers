@@ -19,7 +19,7 @@ class TabNavigator extends React.Component {
       case 'superuser':
         tabNavigatorData = TabNavigationDataSupperAdmin
         break
-      case 'admin':
+      case 'Admin':
         tabNavigatorData = TabNavigationDataAdmin
         break
       case 'lead':

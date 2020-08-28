@@ -1,17 +1,15 @@
 import { takeLatest, all } from 'redux-saga/effects'
 import { AuthenticationTypes } from 'App/Stores/Authentication/Actions'
 import { AccountConfigTypes } from 'App/Stores/AccountConfig/Actions'
-import { ExampleTypes } from 'App/Stores/Example/Actions'
-import { fetchUser } from './ExampleSaga'
 import { fetchAccountConfig } from 'App/Sagas/AccountConfigSaga'
+import { fetchAccountHistory } from 'App/Sagas/AccountHistorySaga'
 import { login } from 'App/Sagas/AuthenticationSaga'
+import { AccountHistoryTypes } from 'App/Stores/AccountHistory/Actions'
 
 export default function* root() {
   yield all([
+    takeLatest(AccountHistoryTypes.FETCH_ACCOUNT_HISTORY, fetchAccountHistory),
     takeLatest(AccountConfigTypes.FETCH_ACCOUNT_CONFIG, fetchAccountConfig),
-    // Call `fetchUser()` when a `FETCH_USER` action is triggered
-    takeLatest(ExampleTypes.FETCH_USER, fetchUser),
-    // Login
     takeLatest(AuthenticationTypes.LOGIN, login),
   ])
 }

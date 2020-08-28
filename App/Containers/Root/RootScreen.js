@@ -4,11 +4,14 @@ import { connect } from 'react-redux'
 import { Helpers } from 'App/Theme'
 import AppNavigator from 'App/Navigators/AppNavigator'
 import AuthNavigator from 'App/Navigators/AuthNavigator'
+import { NavigationContainer } from '@react-navigation/native'
 
 class RootScreen extends Component {
   render() {
     return (
-      <View style={Helpers.fill}>{this.props.token ? <AppNavigator /> : <AuthNavigator />}</View>
+      <NavigationContainer>
+        {this.props.token ? <AppNavigator /> : <AuthNavigator />}
+      </NavigationContainer>
     )
   }
 }
