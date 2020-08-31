@@ -5,14 +5,13 @@ import { Colors, Helpers } from 'App/Theme'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import AccountHistoryAction from 'App/Stores/AccountHistory/Actions'
-import { Icon, ListItem } from 'react-native-elements'
+import { Icon, ListItem, Card } from 'react-native-elements'
 import { formatTime } from 'App/Common/Utils'
 import _ from 'lodash'
 class ThongKeAdminMT4Screen extends React.Component {
   componentDidMount() {
     this.props.fetchAccountHistory()
   }
-
   render() {
     return (
       <View style={{ flex: 1 }}>
@@ -21,21 +20,34 @@ class ThongKeAdminMT4Screen extends React.Component {
             <ActivityIndicator size={'large'} color={Colors.icon} />
           </View>
         ) : (
-          <ScrollView>
-            {_.sortBy(this.props.accountHistory, (o) => o.open_time).map((item, i) => (
+          <View style={{ flex: 1 }}>
+            <View style={{ flex: 1, paddingBottom: 10 }}>
               <ListItem
-                key={i}
-                title={item.account.toString()}
-                subtitle={`${item.symbol} ${item.amount}$ \nOpen: ${formatTime(
-                  item.open_time
-                )} \nClosed: ${formatTime(item.close_time)}`}
-                rightTitle={`${item.status === 0 ? 'Thắng' : 'Thua'}`}
-                rightTitleStyle={{ color: `${item.status === 0 ? 'green' : 'red'}` }}
-                rightSubtitle={`${item.type === 0 ? 'EA' : 'Tự giao dịch'}`}
+                title="Thống kê"
+                subtitle={
+                  'Tổng số giao dịch thắng: 170 \nTổng số giao dịch thua: 170 \nTổng số giao dịch hòa: 34'
+                }
                 bottomDivider
-              />
-            ))}
-          </ScrollView>
+              ></ListItem>
+            </View>
+            <View style={{ flex: 5 }}>
+              <ScrollView>
+                {_.sortBy(this.props.accountHistory, (o) => o.open_time).map((item, i) => (
+                  <ListItem
+                    key={i}
+                    title={item.account.toString()}
+                    subtitle={`${item.symbol} ${item.amount}$ \nOpen: ${formatTime(
+                      item.open_time
+                    )} \nClosed: ${formatTime(item.close_time)}`}
+                    rightTitle={`${item.status === 0 ? 'Thắng' : 'Thua'}`}
+                    rightTitleStyle={{ color: `${item.status === 0 ? 'green' : 'red'}` }}
+                    rightSubtitle={`${item.type === 0 ? 'EA Giao dịch' : 'Tự giao dịch'}`}
+                    bottomDivider
+                  />
+                ))}
+              </ScrollView>
+            </View>
+          </View>
         )}
       </View>
     )

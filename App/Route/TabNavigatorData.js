@@ -4,9 +4,9 @@ import ThongKeScreen from 'App/Containers/Superuser/ThongKeScreen/ThongKeScreen'
 import RutTienScreen from 'App/Containers/Superuser/RutTienScreen/RutTienScreen'
 import AccountScreen from 'App/Containers/Superuser/AccountScreen/AccountScreen'
 import AccountAdminScreen from 'App/Containers/Admin/AccountScreen/AccountAdminScreen'
-import ThongKeAdminScreen from 'App/Containers/Admin/ThongKeScreen/ThongKeAdminScreen'
 import QuanTriAdminScreen from 'App/Containers/Admin/QuanTriScreen/QuanTriAdminScreen'
 import ThongKeAdminMT4Screen from 'App/Containers/Admin/ThongKeAdminMT4/ThongKeAdminMT4Screen'
+import ThongKeTransactionAdminScreen from 'App/Containers/Admin/ThongKeScreen/ThongKeTransactionAdminScreen'
 
 export const TabNavigationDataSupperAdmin = [
   {
@@ -39,7 +39,7 @@ export const TabNavigationDataAdmin = [
   },
   {
     name: 'Giao dịch',
-    component: ThongKeAdminScreen,
+    component: ThongKeTransactionAdminScreen,
     icon: 'chart-line-variant',
   },
   {
